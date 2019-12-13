@@ -4,7 +4,7 @@ if [ ! "$1" ]; then
   echo "usage: $0 file.c" && exit
 fi
 
-[ "${CFLAGS}" ] || CFLAGS="-O0 -gdwarf-2"
+[ "${CFLAGS}" ] || CFLAGS="-O0 -gdwarf-2 -fno-stack-protector"
 [ "${ODFLAGS}" ] || ODFLAGS="--disassembler-options=intel --source"
 [ "${CC}" ] || CC=gcc
 
